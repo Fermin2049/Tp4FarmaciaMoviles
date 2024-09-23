@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_pharmacy">
+
+    <fragment
+        android:id="@+id/nav_map"
+        android:name="com.fermin2049.exploradordefarmacias.ui.Map.MapFragment"
+        android:label="@string/menu_map"
+        tools:layout="@layout/fragment_map" />
+
+    <fragment
+        android:id="@+id/nav_pharmacy"
+        android:name="com.fermin2049.exploradordefarmacias.ui.pharmacy.PharmacyFragment"
+        android:label="@string/menu_pharmacy"
+        tools:layout="@layout/fragment_pharmacy" >
+        <action
+            android:id="@+id/action_nav_pharmacy_to_pharmacyDetailFragment"
+            app:destination="@id/pharmacyDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_leave"
+        android:name="com.fermin2049.exploradordefarmacias.ui.leave.LeaveFragment"
+        android:label="@string/menu_leave"
+        tools:layout="@layout/fragment_leave" />
+    <fragment
+        android:id="@+id/pharmacyDetailFragment"
+        android:name="com.fermin2049.exploradordefarmacias.ui.pharmacy.PharmacyDetailFragment"
+        android:label="PharmacyDetailFragment" >
+        <action
+            android:id="@+id/action_pharmacyDetailFragment_to_nav_pharmacy"
+            app:destination="@id/nav_pharmacy" />
+    </fragment>
+</navigation>
